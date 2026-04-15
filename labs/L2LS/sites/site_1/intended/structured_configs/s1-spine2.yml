@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -114,6 +120,15 @@ local_users:
   sha512_password: $6$arista$JD0xMWIfYsiyJ2Q.0GlcAq8hzpmWk8s4bgeqwLk19i4mzklj7ENb9NooJRjzNqvgvA7hG74DspEzoWGx4Vl1R0
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyoowMqvWf+aUE6EQPAFAjDbWkyMUJXg5+7Wll4QrFrFXlT7NsoPAQpdh0HKTgl8kB89wvuzLAOMQuJ5kMmfbWIFWEdH10OHgh1F7mHqLSGeWl5lwQqVudjOcv8qUjmVwWP7nPRfakAGUv3Tp6VNuTrUGdh/fhp8OkkJcpsoPKs3oMWFL8BlPeJKwGSMIkUBOnVKwFpKkVYeSNUawG4BpkbeTX/K3joyBSYoAOVV2HFSedgvasUFFmXfr0alBxtW/D/99mI5ySC46xlkxtcbyMYSBY/NOG3muOD5IwIRTWHSczstwEbwYw1jxooLpM9fcmgVVW2HrCfzukEclOE4Up
     arista@corning-taiwan-5-8e63be66-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
