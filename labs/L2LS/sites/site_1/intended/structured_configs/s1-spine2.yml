@@ -194,7 +194,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: 20,30
+      allowed_vlan: '20'
 router_ospf:
   process_ids:
   - id: 100
@@ -253,15 +253,6 @@ vlan_interfaces:
   tenant: MY_FABRIC
   tags:
   - App
-- name: Vlan30
-  description: Thirty
-  shutdown: false
-  ip_address: 10.60.60.3/24
-  ip_virtual_router_addresses:
-  - 10.60.60.1
-  tenant: MY_FABRIC
-  tags:
-  - App
 vlan_internal_order:
   allocation: ascending
   range:
@@ -283,9 +274,6 @@ vlans:
   tenant: MY_FABRIC
 - id: 20
   name: Twenty
-  tenant: MY_FABRIC
-- id: 30
-  name: Thirty
   tenant: MY_FABRIC
 vrfs:
 - name: default
